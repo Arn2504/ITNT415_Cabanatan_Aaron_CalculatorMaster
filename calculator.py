@@ -15,6 +15,9 @@ def get_number(prompt):
             print("Invalid input. Please enter a numeric value (e.g., 4 or 3.5).")
 
 
+def subtract(a, b):
+    """Return the difference of a and b."""
+    return a - b
 def multiply(a, b):
     """Return the product of a and b."""
     return a * b
@@ -43,13 +46,22 @@ def main():
             print("Invalid option. Please choose a number between 1 and 5.")
             continue
 
-        if choice == "3":
+        if choice == "1":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            result = add(num1, num2)
+            print(f"Result: {num1} + {num2} = {result}")
+        elif choice == "2":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            result = subtract(num1, num2)
+            print(f"Result: {num1} - {num2} = {result}")
+        elif choice == "3":
             num1 = get_number("Enter the first number: ")
             num2 = get_number("Enter the second number: ")
             result = multiply(num1, num2)
             print(f"Result: {num1} * {num2} = {result}")
         else:
-            # Operations will be implemented on their own branches
             print("This operation is not implemented yet.")
 
 
