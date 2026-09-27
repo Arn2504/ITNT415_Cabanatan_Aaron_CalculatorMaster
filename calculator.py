@@ -14,7 +14,6 @@ def get_number(prompt):
         except ValueError:
             print("Invalid input. Please enter a numeric value (e.g., 4 or 3.5).")
 
-
 def add(a, b):
     """Return the sum of a and b."""
     return a + b
@@ -28,6 +27,13 @@ def subtract(a, b):
 def multiply(a, b):
     """Return the product of a and b."""
     return a * b
+
+#division
+def divide(a, b):
+    """Return the quotient of a and b. Raises ZeroDivisionError if b is 0."""
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero.")
+    return a / b
 
 
 def print_menu():
@@ -68,9 +74,14 @@ def main():
             num2 = get_number("Enter the second number: ")
             result = multiply(num1, num2)
             print(f"Result: {num1} * {num2} = {result}")
-        else:
-            # Operations will be implemented on their own branches
-            print("This operation is not implemented yet.")
+        elif choice == "4":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            try:
+                result = divide(num1, num2)
+                print(f"Result: {num1} / {num2} = {result}")
+            except ZeroDivisionError as e:
+                print(f"Error: {e}")
 
 
 if __name__ == "__main__":
