@@ -1,6 +1,6 @@
 """
-Calculator Master - skeleton
-Student Name: Aaron Cabanatan
+Calculator Master
+Name: Aaron Cabanatan
 Course & Section: ITNT415 - BIT41
 """
 
@@ -15,6 +15,25 @@ def get_number(prompt):
             print("Invalid input. Please enter a numeric value (e.g., 4 or 3.5).")
 
 
+def add(a, b):
+    """Return the sum of a and b."""
+    return a + b
+
+def subtract(a, b):
+    """Return the difference of a and b."""
+    return a - b
+
+def multiply(a, b):
+    """Return the product of a and b."""
+    return a * b
+
+def divide(a, b):
+    """Return the quotient of a and b. Raises ZeroDivisionError if b is 0."""
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero.")
+    return a / b    
+
+
 def print_menu():
     print("\n===== Calculator Master =====")
     print("1. Addition")
@@ -25,7 +44,7 @@ def print_menu():
     print("==============================")
 
 
-def main():
+def main(): 
     while True:
         print_menu()
         choice = input("Select an option (1-5): ").strip()
@@ -38,8 +57,14 @@ def main():
             print("Invalid option. Please choose a number between 1 and 5.")
             continue
 
-        # Operations will be implemented on their own branches
-        print("This operation is not implemented yet.")
+        if choice == "1":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            result = add(num1, num2)
+            print(f"Result: {num1} + {num2} = {result}")
+        else:
+            # Operations will be implemented on their own branches
+            print("This operation is not implemented yet.")
 
 
 if __name__ == "__main__":
