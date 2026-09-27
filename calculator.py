@@ -26,7 +26,7 @@ def subtract(a, b):
 def multiply(a, b):
     """Return the product of a and b."""
     return a * b
-
+    #division
 def divide(a, b):
     """Return the quotient of a and b. Raises ZeroDivisionError if b is 0."""
     if b == 0:
