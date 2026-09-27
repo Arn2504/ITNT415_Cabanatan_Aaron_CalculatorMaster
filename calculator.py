@@ -14,6 +14,20 @@ def get_number(prompt):
         except ValueError:
             print("Invalid input. Please enter a numeric value (e.g., 4 or 3.5).")
 
+def add(a, b):
+    """Return the sum of a and b."""
+    return a + b
+
+
+def subtract(a, b):
+    """Return the difference of a and b."""
+    return a - b
+
+
+def multiply(a, b):
+    """Return the product of a and b."""
+    return a * b
+
 #division
 def divide(a, b):
     """Return the quotient of a and b. Raises ZeroDivisionError if b is 0."""
@@ -45,7 +59,22 @@ def main():
             print("Invalid option. Please choose a number between 1 and 5.")
             continue
 
-        if choice == "4":
+        if choice == "1":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            result = add(num1, num2)
+            print(f"Result: {num1} + {num2} = {result}")
+        elif choice == "2":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            result = subtract(num1, num2)
+            print(f"Result: {num1} - {num2} = {result}")
+        elif choice == "3":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            result = multiply(num1, num2)
+            print(f"Result: {num1} * {num2} = {result}")
+        elif choice == "4":
             num1 = get_number("Enter the first number: ")
             num2 = get_number("Enter the second number: ")
             try:
@@ -53,9 +82,6 @@ def main():
                 print(f"Result: {num1} / {num2} = {result}")
             except ZeroDivisionError as e:
                 print(f"Error: {e}")
-        else:
-            # Operations will be implemented on their own branches
-            print("This operation is not implemented yet.")
 
 
 if __name__ == "__main__":
