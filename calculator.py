@@ -4,6 +4,7 @@ Name: Aaron Cabanatan
 Course & Section: ITNT415 - BIT41
 """
 
+
 def get_number(prompt):
     """Prompt for a number, re-asking until valid."""
     while True:
@@ -12,6 +13,25 @@ def get_number(prompt):
             return float(value)
         except ValueError:
             print("Invalid input. Please enter a numeric value (e.g., 4 or 3.5).")
+
+    #add
+def add(a, b):
+    """Return the sum of a and b."""
+    return a + b
+    #subtract
+def subtract(a, b):
+    """Return the difference of a and b."""
+    return a - b
+    #multiplication logic
+def multiply(a, b):
+    """Return the product of a and b."""
+    return a * b
+
+def divide(a, b):
+    """Return the quotient of a and b. Raises ZeroDivisionError if b is 0."""
+    if b == 0:
+        raise ZeroDivisionError("Cannot divide by zero.")
+    return a / b    
 
 
 def print_menu():
@@ -24,7 +44,7 @@ def print_menu():
     print("==============================")
 
 
-def main():
+def main(): 
     while True:
         print_menu()
         choice = input("Select an option (1-5): ").strip()
@@ -37,10 +57,24 @@ def main():
             print("Invalid option. Please choose a number between 1 and 5.")
             continue
 
-        # Operations will be implemented on their own branches
-        print("This operation is not implemented yet.")
+        if choice == "1":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            result = add(num1, num2)
+            print(f"Result: {num1} + {num2} = {result}")
+
+        if choice == "4":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            try:
+                result = divide(num1, num2)
+                print(f"Result: {num1} / {num2} = {result}")
+            except ZeroDivisionError as e:
+                print(f"Error: {e}")
+        else:
+            # Operations will be implemented on their own branches
+            print("This operation is not implemented yet.")
 
 
 if __name__ == "__main__":
     main()
-
