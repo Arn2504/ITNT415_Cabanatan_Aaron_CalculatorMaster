@@ -1,6 +1,6 @@
 """
-Calculator Master - skeleton
-Student Name: Aaron Cabanatan
+Calculator Master
+Name: Aaron Cabanatan
 Course & Section: ITNT415 - BIT41
 """
 
@@ -13,6 +13,11 @@ def get_number(prompt):
             return float(value)
         except ValueError:
             print("Invalid input. Please enter a numeric value (e.g., 4 or 3.5).")
+
+
+def multiply(a, b):
+    """Return the product of a and b."""
+    return a * b
 
 
 def print_menu():
@@ -38,8 +43,14 @@ def main():
             print("Invalid option. Please choose a number between 1 and 5.")
             continue
 
-        # Operations will be implemented on their own branches
-        print("This operation is not implemented yet.")
+        if choice == "3":
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+            result = multiply(num1, num2)
+            print(f"Result: {num1} * {num2} = {result}")
+        else:
+            # Operations will be implemented on their own branches
+            print("This operation is not implemented yet.")
 
 
 if __name__ == "__main__":
