@@ -1,9 +1,8 @@
 """
-Calculator Master - skeleton
-Student Name: Aaron Cabanatan
+Calculator Master
+Name: Aaron Cabanatan
 Course & Section: ITNT415 - BIT41
 """
-
 
 def get_number(prompt):
     """Prompt for a number, re-asking until valid."""
@@ -44,3 +43,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
